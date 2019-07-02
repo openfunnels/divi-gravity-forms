@@ -29,7 +29,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 		}
 	}
 	function child_plugin_notice(){
-		echo '<div class="error"><p>Sorry, but Gravity Divi Customizer Module requires the Gravity Forms plugin to be installed and active to function.</p></div>';
+		echo '<div class="error"><p>Sorry, but Divi Gravity Forms requires the Gravity Forms plugin to be installed and active to function.</p></div>';
 	}
 
 
@@ -121,6 +121,6 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 	$MyUpdateChecker = new PluginUpdateChecker_2_0 (
 	   'https://kernl.us/api/v1/updates/5d1a9c86475c4004cc26e1bd/',
 	   __FILE__,
-	   'gravitydivi-forms-customizer-module',
+	   'divi-gravity-forms',
 	   1
 	);
