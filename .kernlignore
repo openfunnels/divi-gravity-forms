@@ -3,3 +3,4 @@ build/js
 build/css
 passwords.txt
 directory/file-to-exclude.js
+kernl.version
