@@ -1,3 +1,16 @@
+====== Divi Gravity Forms - Gravity Forms Customizer Module ======
+
+https://openfunnels.com/
+Version: 1.0.5
+Author:	OPENFUNNELS
+https://openfunnels.com/author/OPENFUNNELS/
+
+============================================================
+
+Forked From Gravity Divi on 07/01/2019
+
+============================================================
+
 ====== Gravity Divi - Gravity Forms Customizer Module ======
 
 https://gravitydivi.com/
