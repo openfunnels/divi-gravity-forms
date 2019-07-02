@@ -3,7 +3,7 @@
  * Plugin Name: 	Divi Gravity Forms
  * Plugin URI:		https://openfunnels.com
  * Description:		Quickly and easily make beautiful online forms when you combine the power of Gravity Forms and Divi with this custom module! NOTE: Gravity Divi requires the Gravity Forms plugin to be installed and active. Special thanks to DiviCake.com :)
- * Version: 		1.0.0
+ * Version: 		1.0.1
  * Author:			OPENFUNNELS
  * Author URI: 		https://openfunnels.com/author/OPENFUNNELS/
  *
