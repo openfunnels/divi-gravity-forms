@@ -1,0 +1,25 @@
+.dcgd_gravity_divi_wrapper .gform_title {
+	margin: 0;
+}
+.dcgd_gravity_divi_wrapper .gform_wrapper {
+	margin: 0;
+}
+.dcgd_gravity_divi_wrapper input[type='text'],
+.dcgd_gravity_divi_wrapper input[type='email'],
+.dcgd_gravity_divi_wrapper input[type='url'],
+.dcgd_gravity_divi_wrapper input[type='password'],
+.dcgd_gravity_divi_wrapper input[type='search'],
+.dcgd_gravity_divi_wrapper input[type='number'],
+.dcgd_gravity_divi_wrapper input,
+.dcgd_gravity_divi_wrapper select,
+.dcgd_gravity_divi_wrapper textarea {
+	width: 100%;
+	padding: 16px !important;
+	border: none;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+	color: #6b6b6b;
+	background-color: #eee;
+	font-size: 14px;
+}
