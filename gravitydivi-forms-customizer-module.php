@@ -119,7 +119,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 	*/
 	require_once('includes/plugin_update_check.php');
 	$MyUpdateChecker = new PluginUpdateChecker_2_0 (
-	   'https://kernl.us/api/v1/updates/59652f18674d801275f827b6/',
+	   'https://kernl.us/api/v1/updates/5d1a9c86475c4004cc26e1bd/',
 	   __FILE__,
 	   'gravitydivi-forms-customizer-module',
 	   1
