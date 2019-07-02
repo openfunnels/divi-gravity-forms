@@ -1,17 +1,17 @@
 <?php
 /**
  * Plugin Name: 	Gravity Divi - Gravity Forms Customizer Module
- * Plugin URI:		https://gravitydivi.com
+ * Plugin URI:		https://openfunnels.com
  * Description:		Quickly and easily make beautiful online forms when you combine the power of Gravity Forms and Divi with this custom module! NOTE: Gravity Divi requires the Gravity Forms plugin to be installed and active. Special thanks to DiviCake.com :)
  * Version: 		1.0.5
- * Author:			CODECRATER
- * Author URI: 		https://divicake.com/author/CODECRATER/
+ * Author:			OPENFUNNELS
+ * Author URI: 		https://openfunnels.com/author/OPENFUNNELS/
  *
 */
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-	
+
 	/**
 	 * Perform requirement checks
 	 * @since  1.0.0
@@ -31,8 +31,8 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 	function child_plugin_notice(){
 		echo '<div class="error"><p>Sorry, but Gravity Divi Customizer Module requires the Gravity Forms plugin to be installed and active to function.</p></div>';
 	}
-	
-	
+
+
 	/**
 	 * Adds a hook to the et_builder_ready action. The dcsbcm_Init_Custom_Module function then checks if the Builder Module class exists and if true, runs the new module class.
 	 * @since  1.0.4
@@ -42,8 +42,8 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 		require_once( 'includes/dcgd-module.php' );
 	}
 	add_action('et_builder_ready', 'dcgd_Init_Custom_Module');
-	
-	
+
+
 	/**
 	 * Enqueue Front-End Scripts & Stylesheets
 	 * @since  1.0.0
@@ -52,8 +52,8 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 		wp_enqueue_style( 'dcgd-style', plugin_dir_url( __FILE__ ) . 'includes/dcgd-style.css');
 	}
 	add_action( 'wp_enqueue_scripts', 'dcgd_enqueue_scripts', 99);
-	
-	
+
+
 	/**
 	 * Enqueue Admin Styles
 	 * @since  1.0.0
@@ -84,8 +84,8 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 		echo '</style>';
 		echo '<script>localStorage.removeItem("et_pb_templates_et_pb_dcgd_gravity_divi_module");</script>';
 	}
-	
-	
+
+
 	/**
 	 * Filter the Gravity Forms button type
 	 * @since  1.0.0
@@ -95,7 +95,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 		if ( $buttonHTML != '' ) {
 			$buttonHTMLDOM = new DOMDocument();
 			$buttonHTMLDOM->loadHTML( $buttonHTML );
-			
+
 			$changeElementInput = $buttonHTMLDOM->getElementsByTagName( 'input' );
 			foreach ( $changeElementInput as $item ) {
 				$buttonValue = trim( $item->getAttribute( 'value' ) );
@@ -104,15 +104,15 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 				$item->setAttribute( 'style' , 'margin:auto' );
 			}
 			$buttonHTML = $buttonHTMLDOM->saveHTML();
-			
+
 			$buttonHTML = str_replace( '<input', '<button', $buttonHTML );
 			$buttonHTML = str_replace( 'class="gform_button', 'class="dcgd_submit_button et_pb_contact_submit et_pb_button gform_button', $buttonHTML );
 			$buttonHTML = $buttonHTML . '<span>' . $buttonValue . '</span></button>';
 		}
 		return $buttonHTML;
 	}
-	
-	
+
+
 	/**
 	 * Plugin Updater
 	 * @since  1.0.3
