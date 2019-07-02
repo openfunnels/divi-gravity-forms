@@ -1,7 +1,7 @@
 <?php if ( ! defined( 'ABSPATH' ) ) exit;
 /*  ################################################################
 	Gravity Divi - Gravity Forms Customizer Module
-	
+
 	Module Name: Gravity Divi
 	Version: 1.0.5
 	www.GravityDivi.com
@@ -9,17 +9,17 @@
 	https://divicake.com/author/CODECRATER/
 	################################################################
 */
-	
-	
+
+
 	class dcgd_Gravity_Divi_Custom_Module extends ET_Builder_Module {
 		function init() {
-			$this->name       = 'Gravity Divi';
+			$this->name       = 'Gravity Form';
 			$this->slug       = 'et_pb_dcgd_gravity_divi_module';
 			$this->fb_support = false;
 
 
 			$this->whitelisted_fields = array(
-			
+
 				'gf_form',
 				'show_title',
 				'show_description',
@@ -36,7 +36,7 @@
 			);
 
 			$this->main_css_element = '%%order_class%%.dcgd_gravity_divi_wrapper';
-			
+
 			$this->options_toggles = array(
 				'general'  => array(
 					'toggles' => array(
@@ -53,7 +53,7 @@
 					),
 				),
 			);
-		
+
 			$this->advanced_options = array(
 				'background' => array(
 					'settings' => array(
@@ -101,7 +101,7 @@
 					),
 				),
 			);
-			
+
 			$this->custom_css_options = array(
 				'formcss_title' => array(
 					'label'    => esc_html__( 'Form Title', 'et_builder' ),
@@ -135,10 +135,10 @@
 		}
 
 		function get_fields() {
-		
-		
-		
-	
+
+
+
+
 			$fields = array(
 				'divi_cake' => array(
 					'label'       => 'Discover more great Divi products on <a href="https://divicake.com/products/" target=="_blank">DiviCake.com</a>',
@@ -246,9 +246,9 @@
 			);
 			return $fields;
 		}
-		
+
 		public static function get_gform_choices() {
-			
+
 			$dcgd_form_list = array();
 			$forms = RGFormsModel::get_forms( null, 'title' );
 			foreach ( $forms as $form ) {
@@ -262,8 +262,8 @@
 		}
 
 		function shortcode_callback( $atts, $content = null, $function_name ) {
-			
-			
+
+
 			$module_id         = $this->shortcode_atts['module_id'];
 			$module_class      = $this->shortcode_atts['module_class'];
 			$gf_form           = $this->shortcode_atts['gf_form'];
@@ -272,32 +272,32 @@
 			$enable_ajax    	= $this->shortcode_atts['enable_ajax'];
 			$tab_index    	= $this->shortcode_atts['tab_index'];
 			$background_layout = $this->shortcode_atts['background_layout'];
-			
-			
-			
-			
-			
+
+
+
+
+
 			if ( $show_title == 'on' ) {
 				$show_title = 'true';
 			} else {
 				$show_title = 'false';
 			}
-			
-			
+
+
 			if ( $show_description == 'on' ) {
 				$show_description = 'true';
 			} else {
 				$show_description = 'false';
 			}
-			
-			
+
+
 			if ( $enable_ajax == 'on' ) {
 				$enable_ajax = 'true';
 			} else {
 				$enable_ajax = 'false';
 			}
-			
-			
+
+
 			$tab_index = trim ( $tab_index );
 			if ( is_numeric( $tab_index ) ) {
 				$tab_index = intval( $tab_index );
@@ -305,13 +305,13 @@
 			} else {
 				$tab_index = '';
 			}
-			
-			
-			
+
+
+
 			$module_class = ET_Builder_Element::add_module_order_class( $module_class, $function_name );
 
 			$class = " et_pb_module et_pb_bg_layout_{$background_layout}";
-			
+
 			$dcgd_Output_GformShortcode = sprintf(
 				'[gravityform id="%1$s" title="%2$s" description="%3$s" ajax="%4$s" %5$s]',
 				$gf_form,
@@ -321,7 +321,7 @@
 				$tab_index
 			);
 			$dcgd_Output_GformShortcode = do_shortcode( $dcgd_Output_GformShortcode );
-			
+
 			$dcgd_Output = sprintf(
 				'<div%3$s class="dcgd_gravity_divi_wrapper clearfix%2$s%4$s">%1$s</div><!-- .dcgd_gravity_divi_wrapper -->',
 				$dcgd_Output_GformShortcode,
@@ -329,7 +329,7 @@
 				( '' !== $module_id ? sprintf( ' id="%1$s"', esc_attr( $module_id ) ) : '' ),
 				( '' !== $module_class ? sprintf( ' %1$s', esc_attr( ltrim( $module_class ) ) ) : '' )
 			);
-			
+
 			return $dcgd_Output;
 
 		}
